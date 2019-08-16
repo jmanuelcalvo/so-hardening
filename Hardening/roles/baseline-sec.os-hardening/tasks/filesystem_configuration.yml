@@ -116,11 +116,11 @@
     group: root
     mode: '0000'
 
-#- name: Configure Advance Instruction Detection Environment
-#  command: /usr/sbin/aide -i 
-#
-#- name: Make a copy of /var/lib/aide/aide.db.new.gz  before change
-#  copy:
-#    src: /var/lib/aide/aide.db.new.gz
-#    dest: /var/lib/aide/aide.new.gz
-#    remote_src: yes    
+- name: Configure Advance Instruction Detection Environment
+  command: /usr/sbin/aide -i 
+
+- name: Make a copy of /var/lib/aide/aide.db.new.gz  before change
+  copy:
+    src: /var/lib/aide/aide.db.new.gz
+    dest: /var/lib/aide/aide.new.gz
+    remote_src: yes    
