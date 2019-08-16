@@ -53,13 +53,15 @@
   ignore_errors: true
   copy:
     src: /etc/pam.d/system-auth-ac
-    dest: /usr/local/src/backup/system-auth-ac
+    dest: /usr/local/src/backup/system-auth-ac.{{ansible_date_time.date}}
+    remote_src: yes
 
 - name: Make a copy of /etc/pam.d/system-auth before change
   ignore_errors: true
   copy:
     src: /etc/pam.d/system-auth
-    dest: /usr/local/src/backup/system-auth
+    dest: /usr/local/src/backup/system-auth.{{ansible_date_time.date}}
+    remote_src: yes
 
 - name: Configure pam.d according Linea base de asegurameinto
   template:
@@ -73,13 +75,15 @@
   ignore_errors: true
   copy:
     src: /etc/pam.d/password-auth-ac
-    dest: /usr/local/src/backup/password-auth-ac
+    dest: /usr/local/src/backup/password-auth-ac.{{ansible_date_time.date}}
+    remote_src: yes
 
 - name: Make a copy of /etc/pam.d/password-auth before change
   ignore_errors: true
   copy:
     src: /etc/pam.d/password-auth
-    dest: /usr/local/src/backup/password-auth
+    dest: /usr/local/src/backup/password-auth.{{ansible_date_time.date}}
+    remote_src: yes
 
 - name: Configure pam.d according Linea base de asegurameinto
   template:
@@ -119,3 +123,4 @@
   copy:
     src: /var/lib/aide/aide.db.new.gz
     dest: /var/lib/aide/aide.new.gz
+    remote_src: yes    
