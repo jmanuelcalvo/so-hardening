@@ -1,5 +1,5 @@
 ---
-- hosts: avianca
+- hosts: aerolineas
   roles:
     - baseline-sec.os-hardening
 
